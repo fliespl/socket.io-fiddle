@@ -14,10 +14,10 @@ socket.on('hello', (a, b, c) => {
 });
 
 // FAILING TO EMIT
-socket.on('connect_error', (error) => {
-  console.log('connect_error -> not working', error);
+socket.on('connect_error', () => {
+  console.log('connect_error -> not working');
 });
 
-socket.io.on('error', (error) => {
-  console.log('io error -> working', error);
+socket.io.on('error', () => {
+  console.log('io error -> working');
 });
