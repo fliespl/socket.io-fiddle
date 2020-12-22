@@ -12,3 +12,12 @@ socket.on('disconnect', () => {
 socket.on('hello', (a, b, c) => {
   console.log(a, b, c);
 });
+
+// FAILING TO EMIT
+socket.on('connect_error', (error) => {
+  console.log('connect_error -> not working', error);
+});
+
+socket.io.on('error', (error) => {
+  console.log('io error -> working', error);
+});
